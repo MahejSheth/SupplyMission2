@@ -27,16 +27,22 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
-	wall1 = createSprite(20,200,20,100);
+	/*wallPosition=width/2-100
+ 	wallY=610;
 
 
-wall1.shapeColor = "red"
+ 	leftWallSprite=createSprite(wallPosition, wallY, 20,100);
+ 	leftWallSprite.shapeColor=color(255,0,0);
 
+ 	leftWalltBody = Bodies.rectangle(wallPosition+20, wallY, 20,100 , {isStatic:true} );
+ 	World.add(world, leftWallBody);
 
-Matter.Body.setStatic(wall1,true);
-;
+ 	*/
 
-
+	//create right wall spirte and right wall body similar to left sprite and left body - change position only
+	
+	//create bottom wall sprite and bottom wall body - change position as well as height and width as well
+	
 	engine = Engine.create();
 	world = engine.world;
 
@@ -71,12 +77,17 @@ function keyPressed() {
 
 function keyPressed(){
 	if (keyCode=== RIGHT_ARROW){
-		Matter.Body.setStatic(packageBody,false);
+		//Matter.Body.setStatic(packageBody,false);
+		helicopterSprite.x=helicopterSprite.x+20;
+    		translation={x:20,y:0}
+    		Matter.Body.translate(packageBody, translation)
 	}
 }
 
 function keyPressed(){
 	if (keyCode=== LEFT_ARROW){
-		Matter.Body.setStatic(packageBody,false);
+		//Matter.Body.setStatic(packageBody,false);
+		//add code for left arrow key by making changes un right arrow code
+		//(instead of 20, it will be -20 
 	}
 }
